@@ -1,0 +1,17 @@
+networks:
+  main:
+    name: "bysykkel_main"
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16
+  
+services:
+  backend:
+    container_name: bysykkel
+    image: alekper/bysykkel-backend:local
+    ports:
+      - "8080:8080"
+    networks:
+      - main

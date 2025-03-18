@@ -40,12 +40,12 @@ Applikasjonen er en sanntidsoversikt over sykkelstasjoner i Oslo Bysykkel-system
     ```
 3. Kjør applikasjonen med Docker
     ```zsh
-    make docker startLocal
+    make docker deploylocal
     ```
 4. Åpne nettleseren og gå til [http://localhost:3000](http://localhost:3000)
 5. For å stoppe applikasjonen
     ```zsh
-    make docker stopLocal
+    make docker stopdeploylocal
     ```
 
 ## Hvorfor Docker?
