@@ -1,4 +1,4 @@
 bysykkel:
   client-id: "alekper-bysykkelapp"
   base-url: "https://gbfs.urbansharing.com/oslobysykkel.no"
-  cache-ttl: 10s
+  #cache-ttl: 10
