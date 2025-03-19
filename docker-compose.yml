@@ -9,9 +9,19 @@ networks:
   
 services:
   backend:
-    container_name: bysykkel
+    container_name: bysykkel-backend
     image: alekper/bysykkel-backend:local
     ports:
       - "8080:8080"
+    networks:
+      - main
+
+  frontend:
+    container_name: bysykkel-frontend
+    image: alekper/bysykkel-frontend:local
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
     networks:
       - main
