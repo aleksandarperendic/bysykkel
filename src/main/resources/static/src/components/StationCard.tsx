@@ -32,7 +32,9 @@ const StationCard = ({station}: StationDataProps) => {
                 {station && station.address}
             </Typography>
 
-            <CapacityChip num_bikes_available={station && station.num_bikes_available} num_docks_available={station && station.num_docks_available} capacity={station && station.capacity} />
+            <CapacityChip num_bikes_available={station && station.num_bikes_available}
+                          num_docks_available={station && station.num_docks_available}
+                          capacity={station && station.capacity}/>
         </Paper>
     );
 }

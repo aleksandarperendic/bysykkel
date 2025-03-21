@@ -66,16 +66,16 @@ function App() {
                 }}
             >
                 <Tabs value={tabValue} onChange={handleChange} aria-label="icon tabs example">
-                    <Tooltip title="Liste over alle stasjoner">
-                        <Tab icon={<List />} aria-label="listIcon" />
+                    <Tooltip title="Se ledige sykler og låser i listeformat">
+                        <Tab icon={<List/>} aria-label="listIcon"/>
                     </Tooltip>
-                    <Tooltip title="Oslo Kart">
-                        <Tab icon={<LocationOnOutlined />} aria-label="map" />
+                    <Tooltip title="Utforsk bysykkelstasjoner på kartet">
+                        <Tab icon={<LocationOnOutlined/>} aria-label="map"/>
                     </Tooltip>
                 </Tabs>
             </Box>
 
-            {tabValue === 0 && <StationList stations={stations} />}
+            {tabValue === 0 && <StationList stations={stations}/>}
             {tabValue === 1 && (
                 <Box
                     sx={{
@@ -85,7 +85,7 @@ function App() {
                         boxSizing: "border-box",
                     }}
                 >
-                    <OsloMap stations={stations} />
+                    <OsloMap stations={stations}/>
                 </Box>
             )}
         </>

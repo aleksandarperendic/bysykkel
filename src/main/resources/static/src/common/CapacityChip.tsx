@@ -1,5 +1,5 @@
-import { Box, Tooltip, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { DirectionsBike, LockOpen } from "@mui/icons-material";
+import {Box, Tooltip, Typography, useMediaQuery, useTheme} from "@mui/material";
+import {DirectionsBike, LockOpen} from "@mui/icons-material";
 
 interface CapacityChipProps {
     num_bikes_available?: number;
@@ -7,7 +7,7 @@ interface CapacityChipProps {
     capacity?: number;
 }
 
-const CapacityChip = ({ num_bikes_available, num_docks_available, capacity }: CapacityChipProps) => {
+const CapacityChip = ({num_bikes_available, num_docks_available, capacity}: CapacityChipProps) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -29,8 +29,8 @@ const CapacityChip = ({ num_bikes_available, num_docks_available, capacity }: Ca
             }}
         >
             <Tooltip title={`Antall ledige sykler. Kapasitet: ${capacity}`}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                    <DirectionsBike sx={{ fontSize: 16 }} />
+                <Box sx={{display: "flex", alignItems: "center", gap: 0.5}}>
+                    <DirectionsBike sx={{fontSize: 16}}/>
                     <Typography fontWeight="bold" variant="body1">
                         {num_bikes_available}
                     </Typography>
@@ -53,8 +53,8 @@ const CapacityChip = ({ num_bikes_available, num_docks_available, capacity }: Ca
             )}
 
             <Tooltip title={`Antall ledige låser. Kapasitet: ${capacity}`}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                    <LockOpen sx={{ fontSize: 16 }} />
+                <Box sx={{display: "flex", alignItems: "center", gap: 0.5}}>
+                    <LockOpen sx={{fontSize: 16}}/>
                     <Typography fontWeight="bold" variant="body1">
                         {num_docks_available}
                     </Typography>

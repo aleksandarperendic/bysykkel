@@ -53,7 +53,7 @@ Applikasjonen er containerisert og satt opp med Docker Bake, og bruker Nginx som
 4. Åpne nettleseren og gå til [http://localhost:3000](http://localhost:3000)
 5. For å stoppe applikasjonen
     ```zsh
-    make docker stopdeploylocal
+    make stopdeploylocal
     ```
 
 ## Hvorfor Docker?

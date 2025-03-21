@@ -8,7 +8,7 @@ interface PopoverProps {
     capacity?: number;
 }
 
-const MapPopover = ({ address, num_bikes_available, num_docks_available, capacity }: PopoverProps) => {
+const MapPopover = ({address, num_bikes_available, num_docks_available, capacity}: PopoverProps) => {
     return (
         <Paper
             elevation={0}
@@ -23,27 +23,27 @@ const MapPopover = ({ address, num_bikes_available, num_docks_available, capacit
             <Typography
                 variant="body1"
                 fontWeight="bold"
-                sx={{ mb: 1 }}
+                sx={{mb: 1}}
             >
                 {address}
             </Typography>
 
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 0.5 }}>
-                <DirectionsBike sx={{ fontSize: 24 }} />
+            <Box sx={{display: "flex", alignItems: "center", gap: 1, mb: 0.5}}>
+                <DirectionsBike sx={{fontSize: 24}}/>
                 <Typography variant="body2" fontWeight="bold">
                     Ledige sykler: {num_bikes_available}
                 </Typography>
             </Box>
 
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 0.5 }}>
-                <LockOpen sx={{ fontSize: 24 }} />
+            <Box sx={{display: "flex", alignItems: "center", gap: 1, mb: 0.5}}>
+                <LockOpen sx={{fontSize: 24}}/>
                 <Typography variant="body2" fontWeight="bold">
                     Ledige låser: {num_docks_available}
                 </Typography>
             </Box>
 
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                <LocationOn sx={{ fontSize: 24 }} />
+            <Box sx={{display: "flex", alignItems: "center", gap: 1}}>
+                <LocationOn sx={{fontSize: 24}}/>
                 <Typography variant="body2" fontWeight="bold">
                     Kapasitet: {capacity}
                 </Typography>

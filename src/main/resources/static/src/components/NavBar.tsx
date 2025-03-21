@@ -6,20 +6,20 @@ interface NavBarProps {
     timestamp: string;
 }
 
-const NavBar = ({ timestamp }: NavBarProps) => {
+const NavBar = ({timestamp}: NavBarProps) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <AppBar position="fixed" elevation={0} sx={{ backgroundColor: "#005fc9" }}>
-            <Toolbar sx={{ position: "relative", minHeight: 64 }}>
+        <AppBar position="fixed" elevation={0} sx={{backgroundColor: "#005fc9"}}>
+            <Toolbar sx={{position: "relative", minHeight: 64}}>
                 {isMobile ? (
                     <>
                         <Box>
-                            <DirectionsBike sx={{ color: "#fcfcfc" }} fontSize="large" />
+                            <DirectionsBike sx={{color: "#fcfcfc"}} fontSize="large"/>
                         </Box>
-                        <Box sx={{ ml: "auto" }}>
-                            <InfoChip label={`Sist oppdatert: ${timestamp}`} />
+                        <Box sx={{ml: "auto"}}>
+                            <InfoChip label={`Sist oppdatert: ${timestamp}`}/>
                         </Box>
                     </>
                 ) : (
@@ -31,10 +31,10 @@ const NavBar = ({ timestamp }: NavBarProps) => {
                                 transform: "translateX(-50%)",
                             }}
                         >
-                            <DirectionsBike sx={{ color: "#fcfcfc" }} fontSize="large" />
+                            <DirectionsBike sx={{color: "#fcfcfc"}} fontSize="large"/>
                         </Box>
-                        <Box sx={{ ml: "auto" }}>
-                            <InfoChip label={`Sist oppdatert: ${timestamp}`} />
+                        <Box sx={{ml: "auto"}}>
+                            <InfoChip label={`Sist oppdatert: ${timestamp}`}/>
                         </Box>
                     </>
                 )}

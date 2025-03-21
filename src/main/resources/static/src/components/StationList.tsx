@@ -10,10 +10,10 @@ interface StationListProps {
 
 const StationList = ({stations}: StationListProps) => {
     return (
-        <Grid container columnSpacing={2} sx={{ marginTop: "15px" }}>
-            <Grid size={{ xs: 12, md: 6 }}>
+        <Grid container columnSpacing={2} sx={{marginTop: "15px"}}>
+            <Grid size={{xs: 12, md: 6}}>
                 <Box display="flex" justifyContent="center" my={1}>
-                    <InfoChip label="Påbegynn reise her ▼" />
+                    <InfoChip label="Startpunkt – ledige sykler ▼"/>
                 </Box>
                 <Box
                     sx={{
@@ -29,14 +29,14 @@ const StationList = ({stations}: StationListProps) => {
                         stations
                             .filter((s) => s.num_bikes_available > 0)
                             .map((station) => (
-                                <StationCard key={station.station_id} station={station} />
+                                <StationCard key={station.station_id} station={station}/>
                             ))}
                 </Box>
             </Grid>
 
-            <Grid size={{ xs: 12, md: 6 }}>
+            <Grid size={{xs: 12, md: 6}}>
                 <Box display="flex" justifyContent="center" my={1}>
-                    <InfoChip label="Avslutt reise her ▼" />
+                    <InfoChip label="Endepunkt – ledige låser ▼"/>
                 </Box>
                 <Box
                     sx={{
@@ -51,7 +51,7 @@ const StationList = ({stations}: StationListProps) => {
                         stations
                             .filter((s) => s.num_docks_available > 0)
                             .map((station) => (
-                                <StationCard key={station.station_id} station={station} />
+                                <StationCard key={station.station_id} station={station}/>
                             ))}
                 </Box>
             </Grid>
