@@ -1,5 +1,6 @@
 package no.alekper.oslosykkel.client;
 
+import lombok.extern.slf4j.Slf4j;
 import no.alekper.oslosykkel.dto.availability.StationStatusData;
 import no.alekper.oslosykkel.dto.stations.StationData;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
+@Slf4j
 public class BysykkelClient {
 
     private final RestTemplate restTemplate;
@@ -31,14 +33,22 @@ public class BysykkelClient {
     }
 
     public StationData getStationInformation() {
-        String url = baseUrl + "/station_information.json";
-        ResponseEntity<StationData> response = restTemplate.exchange(url, HttpMethod.GET, createHeaders(), StationData.class);
-        return response.getBody();
+        try {
+            String url = baseUrl + "/station_information.json";
+            ResponseEntity<StationData> response = restTemplate.exchange(url, HttpMethod.GET, createHeaders(), StationData.class);
+            return response.getBody();
+        } catch (Exception e) {
+            throw new BysykkelClientException("Feil ved henting av station_information", e);
+        }
     }
 
     public StationStatusData getStationStatus() {
-        String url = baseUrl + "/station_status.json";
-        ResponseEntity<StationStatusData> response = restTemplate.exchange(url, HttpMethod.GET, createHeaders(), StationStatusData.class);
-        return response.getBody();
+        try {
+            String url = baseUrl + "/station_status.json";
+            ResponseEntity<StationStatusData> response = restTemplate.exchange(url, HttpMethod.GET, createHeaders(), StationStatusData.class);
+            return response.getBody();
+        } catch (Exception e) {
+            throw new BysykkelClientException("Feil ved henting av station_status", e);
+        }
     }
 }

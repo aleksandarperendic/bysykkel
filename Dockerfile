@@ -6,7 +6,7 @@ COPY src ./src
 
 RUN mvn clean package -DskipTests
 
-FROM gcr.io/distroless/java21 AS runtime
+FROM eclipse-temurin:21-jre-alpine AS runtime
 WORKDIR /app
 
 COPY --from=build /app/target/oslosykkel-1.0.0.jar app.jar

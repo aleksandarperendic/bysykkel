@@ -1,0 +1,11 @@
+.leaflet-popup-content-wrapper {
+    background: #003b7d !important;
+}
+
+a.leaflet-popup-close-button {
+    color: white !important;
+}
+
+.leaflet-popup-tip {
+    background: #003b7d !important;
+}
